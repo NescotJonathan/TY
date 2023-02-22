@@ -19,12 +19,12 @@
             <br />
             <br />
             My phone number is:
-            <asp:TextBox ID="txtPhone" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtPhone" runat="server" TextMode="Number"></asp:TextBox>
             <br />
             <br />
             <asp:Label ID="lblError" runat="server"></asp:Label>
             <br />
-            <asp:Button ID="btnOk" runat="server" Text="Complete Order" />
+            <asp:Button ID="btnOk" runat="server" Text="Complete Order" OnClick="btnOk_Click" />
         </div>
     </form>
 </body>

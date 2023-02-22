@@ -19,22 +19,22 @@ namespace AramarkFinal
 
         protected void btnOk_Click(object sender, EventArgs e)
         {
-            double total = (double)Session["OrderTotal"];
-
             if (txtName.Text == "")
             {
                 lblError.Text = "ERROR: Please enter a name.";
-            }
-            else if (txtPhone.Text == "")
-            {
-                lblError.Text = "ERROR: Please enter a phone number.";
             }
             else if ((!rbStudent.Checked) && (!rbTeacher.Checked))
             {
                 lblError.Text = "ERROR: Please state whether you're a student or a teacher.";
             }
+            else if (txtPhone.Text == "")
+            {
+                lblError.Text = "ERROR: Please enter a phone number.";
+            }
             else
             {
+                double total = (double)Session["OrderTotal"];
+
                 AramarkFinalDBEntities db = new AramarkFinalDBEntities();
                 var dbOrders = db.Orders;
                 var newOrder = new Order();
@@ -51,6 +51,10 @@ namespace AramarkFinal
                 newOrder.Pepperoni = (int)Session["QuantityPepperoni"];
                 newOrder.Time = currentTime.ToString();
                 newOrder.Status = "Processing...";
+
+                dbOrders.Add(newOrder);
+                db.SaveChanges();
+                Response.Redirect("Orders.aspx");
 
                 try
                 {

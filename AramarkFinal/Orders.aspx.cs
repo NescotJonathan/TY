@@ -13,5 +13,15 @@ namespace AramarkFinal
         {
 
         }
+
+        protected void btnGoToPizzas_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Default.aspx");
+        }
+
+        protected void btnGoToStaffPanel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("StaffPanel.aspx");
+        }
     }
 }

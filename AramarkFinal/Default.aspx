@@ -9,6 +9,11 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:Button ID="btnGoToPizzas" runat="server" BackColor="Gray" Enabled="False" Text="Pizzas" />
+            <asp:Button ID="btnGoToOrders" runat="server" OnClick="btnGoToOrders_Click" Text="Orders" />
+            <asp:Button ID="btnGoToStaffPanel" runat="server" OnClick="btnGoToStaffPanel_Click" Text="Staff Panel" />
+            <br />
+            <br />
             Price: £3.60<br />
             Quantity:
             <asp:Label ID="lblCheeseQuantity" runat="server" Text="0"></asp:Label>

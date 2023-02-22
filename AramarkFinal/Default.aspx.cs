@@ -130,5 +130,15 @@ namespace AramarkFinal
         {
             Response.Redirect("UserInfo.aspx");
         }
+
+        protected void btnGoToOrders_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Orders.aspx");
+        }
+
+        protected void btnGoToStaffPanel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("StaffPanel.aspx");
+        }
     }
 }

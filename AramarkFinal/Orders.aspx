@@ -9,6 +9,10 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:Button ID="btnGoToPizzas" runat="server" OnClick="btnGoToPizzas_Click" Text="Pizzas" />
+            <asp:Button ID="btnGoToOrders" runat="server" BackColor="Gray" Enabled="False" Text="Orders" />
+            <asp:Button ID="btnGoToStaffPanel" runat="server" OnClick="btnGoToStaffPanel_Click" Text="Staff Panel" />
+            <br />
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1">
                 <Columns>
                     <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />

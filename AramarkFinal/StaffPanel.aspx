@@ -9,6 +9,11 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:Button ID="btnGoToPizzas" runat="server" OnClick="btnGoToPizzas_Click" Text="Pizzas" />
+            <asp:Button ID="btnGoToOrders" runat="server" OnClick="btnGoToOrders_Click" Text="Orders" />
+            <asp:Button ID="btnStaffPanel" runat="server" BackColor="Gray" Enabled="False" Text="Staff Panel" />
+            <br />
+            <br />
             Username:
             <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
             <br />

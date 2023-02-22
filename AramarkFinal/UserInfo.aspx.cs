@@ -23,7 +23,7 @@ namespace AramarkFinal
             {
                 lblError.Text = "ERROR: Please enter a name.";
             }
-            else if ((!rbStudent.Checked) && (!rbTeacher.Checked))
+            else if ((!rbStudent.Checked) && (!rbFaculty.Checked))
             {
                 lblError.Text = "ERROR: Please state whether you're a student or a teacher.";
             }

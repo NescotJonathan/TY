@@ -15,7 +15,7 @@
             <br />
             I am a:<br />
             <asp:RadioButton ID="rbStudent" runat="server" Text="Student" />
-&nbsp;<asp:RadioButton ID="rbTeacher" runat="server" Text="Teacher" />
+&nbsp;<asp:RadioButton ID="rbFaculty" runat="server" Text="Faculty Member" />
             <br />
             <br />
             My phone number is:

@@ -11,6 +11,14 @@ namespace AramarkFinal
     {
         protected void Application_Start(object sender, EventArgs e)
         {
+
+        }
+
+        protected void Session_Start(object sender, EventArgs e)
+        {
+            Session["QuantityCheese"] = 0;
+            Session["QuantityPepperoni"] = 0;
+            Session["OrderTotal"] = 0.0;
         }
     }
 }

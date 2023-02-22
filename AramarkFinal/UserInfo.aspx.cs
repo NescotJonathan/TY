@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -34,7 +35,39 @@ namespace AramarkFinal
             }
             else
             {
+                AramarkFinalDBEntities db = new AramarkFinalDBEntities();
+                var dbOrders = db.Orders;
+                var newOrder = new Order();
+
+                DateTime currentTime = DateTime.Now;
+
+
                 total = (rbStudent.Checked) ? total : total * 1.2;
+
+                newOrder.Name = txtName.Text;
+                newOrder.Phone = txtPhone.Text;
+                newOrder.Price = total.ToString();
+                newOrder.Cheese = (int)Session["QuantityCheese"];
+                newOrder.Pepperoni = (int)Session["QuantityPepperoni"];
+                newOrder.Time = currentTime.ToString();
+                newOrder.Status = "Processing...";
+
+                try
+                {
+                    dbOrders.Add(newOrder);
+                    db.SaveChanges();
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    foreach (var errors in ex.EntityValidationErrors)
+                    {
+                        foreach (var validationError in errors.ValidationErrors)
+                        {
+                            // get the error message 
+                            string errorMessage = validationError.ErrorMessage;
+                        }
+                    }
+                }
             }
         }
     }

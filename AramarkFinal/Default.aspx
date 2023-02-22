@@ -13,18 +13,18 @@
             Quantity:
             <asp:Label ID="lblCheeseQuantity" runat="server" Text="0"></asp:Label>
             x<br />
-            <asp:Button ID="btnAddCheese" runat="server" Text="Add Cheese Pizza" />
+            <asp:Button ID="btnAddCheese" runat="server" OnClick="btnAddCheese_Click" Text="Add Cheese Pizza" />
             <br />
-            <asp:Button ID="btnRemoveCheese" runat="server" Text="Remove Cheese Pizza" />
+            <asp:Button ID="btnRemoveCheese" runat="server" OnClick="btnRemoveCheese_Click" Text="Remove Cheese Pizza" />
             <br />
             <br />
             Price: £3.80<br />
             Quantity:
             <asp:Label ID="lblPepperoniQuantity" runat="server" Text="0"></asp:Label>
             x<br />
-            <asp:Button ID="btnAddPepperoni" runat="server" Text="Add Pepperoni Pizza" />
+            <asp:Button ID="btnAddPepperoni" runat="server" OnClick="btnAddPepperoni_Click" Text="Add Pepperoni Pizza" />
             <br />
-            <asp:Button ID="btnRemovePepperoni" runat="server" Text="Remove Pepperoni Pizza" />
+            <asp:Button ID="btnRemovePepperoni" runat="server" OnClick="btnRemovePepperoni_Click" Text="Remove Pepperoni Pizza" />
             <br />
             <br />
             Your total comes to:
@@ -33,7 +33,7 @@
             <br />
             <asp:Label ID="lblError" runat="server"></asp:Label>
             <br />
-            <asp:Button ID="btnOk" runat="server" Text="Add to Order" />
+            <asp:Button ID="btnOk" runat="server" OnClick="btnOk_Click" Text="Add to Order" />
         </div>
     </form>
 </body>

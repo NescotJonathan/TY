@@ -33,12 +33,14 @@
                     <asp:BoundField DataField="Time" HeaderText="Time" SortExpression="Time" />
                     <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
                 </Columns>
+                <SelectedRowStyle BackColor="#CC99FF" />
             </asp:GridView>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Order]"></asp:SqlDataSource>
             <br />
+            <asp:Label ID="lblGridError" runat="server"></asp:Label>
             <br />
-            <asp:Button ID="btnConfirm" runat="server" Text="Confirm Order" Visible="False" />
-            <asp:Button ID="btnDelete" runat="server" Text="Delete Order" Visible="False" />
+            <asp:Button ID="btnConfirm" runat="server" Text="Confirm Order" Visible="False" OnClick="btnConfirm_Click" />
+            <asp:Button ID="btnDelete" runat="server" Text="Delete Order" Visible="False" OnClick="btnDelete_Click" />
         </div>
     </form>
 </body>

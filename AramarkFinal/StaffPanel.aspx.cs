@@ -13,6 +13,7 @@ namespace AramarkFinal
         protected void Page_Load(object sender, EventArgs e)
         {
             lblError.Text = null;
+            lblGridError.Text = null;
 
             if (!IsPostBack)
             {
@@ -44,7 +45,41 @@ namespace AramarkFinal
             btnConfirm.Visible = x;
             btnDelete.Visible = x;
         }
+
+        protected void btnConfirm_Click(object sender, EventArgs e)
+        {
+            if (grdOrders.SelectedRow == null)
+            {
+                lblGridError.Text = "ERROR: Please select a row first.";
+            }
+            else
+            {
+                AramarkFinalDBEntities db = new AramarkFinalDBEntities();
+
+                var order = db.Orders.Find(grdOrders.SelectedValue);
+                order.Status = "Confirmed";
+
+                db.SaveChanges();
+                grdOrders.DataBind();
+            }    
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            if(grdOrders.SelectedRow == null)
+            {
+                lblGridError.Text = "ERROR: Please select a row first.";
+            }
+            else
+            {
+                AramarkFinalDBEntities db = new AramarkFinalDBEntities();
+
+                var order = db.Orders.Find(grdOrders.SelectedValue);
+                db.Entry(order).State = System.Data.Entity.EntityState.Deleted;
+
+                db.SaveChanges();
+                grdOrders.DataBind();
+            }
+        }
     }
-
-
 }

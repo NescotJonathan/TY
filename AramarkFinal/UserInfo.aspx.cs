@@ -67,7 +67,7 @@ namespace AramarkFinal
                     {
                         foreach (var validationError in errors.ValidationErrors)
                         {
-                            // get the error message 
+                            // get the error message (check me in breakpoint!)
                             string errorMessage = validationError.ErrorMessage;
                         }
                     }

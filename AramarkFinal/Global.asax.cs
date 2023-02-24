@@ -16,6 +16,7 @@ namespace AramarkFinal
 
         protected void Session_Start(object sender, EventArgs e)
         {
+            //Declares the session variables and sets all their values to 0
             Session["QuantityCheese"] = 0;
             Session["QuantityPepperoni"] = 0;
             Session["OrderTotal"] = 0.0;

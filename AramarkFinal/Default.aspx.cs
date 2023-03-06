@@ -37,7 +37,7 @@ namespace AramarkFinal
             //Checks if there are any pizzas in the order currently, hides the confirmation button if there are no pizzas selected
             if (quantityCheese < 1 && quantityPepperoni < 1)
             {
-                btnOk.Visible = false;
+                btnOk.Visible = false;  
             }
             else
             {
